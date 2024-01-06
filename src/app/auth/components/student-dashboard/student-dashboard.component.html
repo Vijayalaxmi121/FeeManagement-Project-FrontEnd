@@ -1,0 +1,80 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a
+      class="navbar-brand"
+      [routerLink]="['/accountant-home']"
+      routerLinkActive="active"
+      >Student Panel</a
+    >
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+
+<div
+  class="bg-image"
+  style="
+    background-image: url('https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80');
+    height: 100vh;
+    background-size: cover;
+  "
+>
+  <button
+    style="border-radius: 30px"
+    [routerLink]="['/login']"
+    routerLinkActive="active"
+  >
+    Logout
+  </button>
+  <br />
+  <br />
+  <form #deleteForm="ngForm">
+    <table
+      datatable
+      [dtOptions]="dtOptions"
+      class="row-border hover"
+      style="background-color: rgb(164, 172, 180)"
+    >
+      <thead>
+        <tr>
+          <th>Rollno</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Course</th>
+          <th>Fee</th>
+          <th>Paid</th>
+          <th>due</th>
+          <th>Contact</th>
+          <th>Pay</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background-color: rgb(201, 198, 198)">
+          <td>{{ studentData.response.studentId }}</td>
+          <td>{{ studentData.response.studentName }}</td>
+          <td>{{ studentData.response.emailId }}</td>
+          <td>{{ studentData.response.course }}</td>
+          <td>{{ studentData.response.fee }}</td>
+          <td>{{ studentData.response.paid }}</td>
+          <td>{{ studentData.response.duefees }}</td>
+          <td>{{ studentData.response.contactno }}</td>
+
+          <td>
+            <a class="btn" [routerLink]="['/order']"
+              ><img height="35" width="80" src="/assets/pay-btn.png" /></a
+            ><br />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+</div>

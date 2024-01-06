@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Admin Panel</a>
+      <button class="navbar-toggler"
+       type="button"
+        data-bs-toggle="collapse"
+         data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse"
+      id="navbarNavDropdown">
+        <ul class="navbar-nav">
+
+
+          <li class="nav-item">
+            <a class="nav-link"
+            [routerLink]="['/add-accountant']" routerLinkActive="active">Add Accountant </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"
+            [routerLink]="['/view-accountant']" routerLinkActive="active">View Accountant</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"
+            [routerLink]="['/add-teacher']" routerLinkActive="active">Add Teacher</a>
+          </li>
+
+
+          <button class = "button" style =" position: absolute; right: 0; border-radius: 30px; width:100px;"
+            [routerLink]="['/login']" routerLinkActive="active">Logout
+          </button>
+
+
+
+         </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="bg-image" style="
+  background-image: url('assets/fee-management-pic.jpg');
+  height: 100vh; background-size : cover; background-position: center;background-repeat: no-repeat;background-attachment: scroll;">
+
+
+<div class="btn1" style="padding-top: 200px;padding-left: 500px"><a class="btn" style="font-size:xx-large" routerLink="/add-accountant">Add Accountant</a></div><br>
+<div class="btn2" style="padding-left: 500px"><a class="btn" style="font-size:xx-large" routerLink="/view-accountant">View Accountant</a></div><br>
+<div class="btn2" style="padding-left: 500px"><a class="btn" style="font-size:xx-large" routerLink="/add-teacher">Add Teacher</a></div><br>
+<!--<div class="btn3" style="padding-left: 500px"><a class="btn" style="font-size:xx-large" routerLink="/edit-accountant">Edit Accountant</a></div><br>
+  <div class="btn4" style="padding-left: 500px"><a class="btn" style="font-size:xx-large" routerLink="/delete-accountant">Delete Accountant</a></div><br> -->
+
+</div>

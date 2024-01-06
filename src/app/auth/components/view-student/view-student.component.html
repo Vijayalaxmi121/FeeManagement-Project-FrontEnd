@@ -1,0 +1,96 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" [routerLink]="['/accountant-home']" routerLinkActive="active">Accountant Panel</a>
+    <button class="navbar-toggler"
+     type="button"
+      data-bs-toggle="collapse"
+       data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse"
+    id="navbarNavDropdown">
+      <ul class="navbar-nav">
+
+
+        <li class="nav-item">
+          <a class="nav-link"
+          [routerLink]="['/add-student']" routerLinkActive="active">Add Student </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"
+          [routerLink]="['/view-student']" routerLinkActive="active">View Student</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link"
+          [routerLink]="['/search-student']" routerLinkActive="active">Search Student</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link"
+          [routerLink]="['/due-fees']" routerLinkActive="active">View Dues</a>
+        </li>
+
+
+
+
+       </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="bg-image" style="
+  background-image: url('https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80');
+  height: 100vh; background-size : cover;">
+
+
+
+<h1>View Students</h1>
+<form #deleteForm="ngForm">
+<table *ngIf="students.length" datatable [dtOptions]="dtOptions" class="row-border hover" style="background-color: rgb(164, 172, 180)">
+
+  <thead>
+    <tr>
+      <th>Rollno</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Gender</th>
+      <th>Course</th>
+      <th>Fee</th>
+      <th>Paid</th>
+      <th>due</th>
+      <th>Address</th>
+      <th>Contact</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let student of students" style="background-color: rgb(201, 198, 198);">
+      <td>{{ student?.studentId }}</td>
+      <td>{{ student?.studentName}}</td>
+      <td>{{ student?.emailId }}</td>
+      <td>{{ student?.gender }}</td>
+      <td>{{ student?.course }}</td>
+      <td>{{ student?.fee }}</td>
+      <td>{{ student?.paid }}</td>
+      <td>{{ student?.duefees}}</td>
+      <td>{{ student?.address}}</td>
+      <td>{{ student?.contactno }}</td>
+
+
+
+      <td><a class="btn"  (click)="onEdit(student)">EDIT</a><br></td>
+      <td><button id="remove" (click)="onDelete(student.studentId)">DELETE</button></td>
+
+
+       <!--  <button id="remove" (click)="deleteRow(student.studentId)">DELETE</button>-->
+      </tr>
+  </tbody>
+
+</table>
+</form>
+</div>

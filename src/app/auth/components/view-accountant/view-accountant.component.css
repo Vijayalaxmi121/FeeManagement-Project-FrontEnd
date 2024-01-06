@@ -1,0 +1,38 @@
+.button-delete:hover {
+  background-color: red; /* Green */
+  color: white;
+  text-align: center;
+}
+
+.button {
+  transition-duration: 0.4s;
+}
+
+.button-edit:hover {
+  color: #ffffff;
+  font: bold 12px arial, sans-serif;
+  text-align: center;
+  background-color: #004c76;
+  -webkit-appearance: none;
+  padding: 7px 8px 7px 8px;
+  margin: 0px 0px 0px 0px;
+  cursor: pointer;
+  width: 120px;
+  border: #004c76 1px solid;
+  /* CORNER ROUNDING */
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+}
+
+ h1 {
+
+	color: #343434;
+	font-weight: normal;
+	font-family: 'Ultra', sans-serif;
+	font-size: 36px;
+	line-height: 42px;
+	text-transform: uppercase;
+	text-shadow: 0 2px white, 0 3px #777;
+}

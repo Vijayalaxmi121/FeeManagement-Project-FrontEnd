@@ -1,0 +1,9 @@
+.button:hover {
+  background-color: red; /* Green */
+  color: white;
+}
+
+
+.button {
+  transition-duration: 0.4s;
+}

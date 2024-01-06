@@ -1,0 +1,26 @@
+.label {
+    background: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 0;
+}
+
+h3 {
+    /* color: aliceblue; */
+    text-align: center;
+}
+.btn{
+    width: 60%;
+    margin: 0 0 0 20%;
+}
+.logo img{
+    height: 5rem;
+    width: 5rem;
+    margin: 5% 0 5% 40%;
+}
+input{
+    width: 60%;
+    margin: 0 0 0 20%;
+}

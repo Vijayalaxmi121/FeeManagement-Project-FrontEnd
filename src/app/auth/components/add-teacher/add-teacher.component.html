@@ -1,0 +1,98 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" [routerLink]="['/admin-home']" routerLinkActive="active">Admin Panel</a>
+    <button class="navbar-toggler"
+     type="button"
+      data-bs-toggle="collapse"
+       data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse"
+    id="navbarNavDropdown">
+      <ul class="navbar-nav">
+
+
+        <li class="nav-item">
+          <a class="nav-link"
+          [routerLink]="['/add-accountant']" routerLinkActive="active">Add Accountant </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"
+          [routerLink]="['/view-accountant']" routerLinkActive="active">View Accountant</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"
+          [routerLink]="['/add-teacher']" routerLinkActive="active">Add Teacher</a>
+        </li>
+
+        <button class = "button" style =" position: absolute; right: 0; border-radius: 30px; width:100px;"
+            [routerLink]="['/login']" routerLinkActive="active">Logout
+          </button>
+
+
+
+       </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+
+<div class="bg-image" style="
+background-image: url('https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80');
+height: 150vh; background-size : cover;">
+
+
+
+<div class="row">
+  <div class="col-md-6 offset-md-3 mt-4">
+    <fieldset class="k11">
+<h1>Add Teacher</h1><br>
+<form #teacher="ngForm">
+
+  <div class="form-group">
+  <label for="name"> Name :</label>
+  <input #name="ngModel" required  name="name"   id="name" type="text" class="form-control" ngModel>
+<div *ngIf="name.touched && name.invalid" class="alert alert-danger" > Name is required </div>
+</div><br>
+  <div class="form-group">
+      <label for="password"> Password :</label>
+      <input #name="ngModel" required  name="password"   id="password" type="password" class="form-control" ngModel>
+    <div *ngIf="name.touched && name.invalid" class="alert alert-danger" > Name is required </div>
+    </div><br>
+<div class="form-group">
+  <label for="email">E-mail :</label>
+  <input #name="ngModel" required name="emailId" id="email" pattern="[^@\s]+@[^@\s]+" title="Invalid email address" type="text" class="form-control" ngModel>
+  <div *ngIf="name.touched && name.invalid" class="alert alert-danger" > e-mail id is required </div>
+
+</div><br>
+
+<div class="form-group">
+  <label for="address">Address    :</label>
+  <textarea #name="ngModel" required name="address" id="address" cols="10" rows="10" class="form-control" ngModel></textarea>
+  <div *ngIf="name.touched && name.invalid" class="alert alert-danger" > Address is required </div>
+</div><br>
+<div class="form-group">
+  <label for="contact">Contact     :</label>
+  <input #name="ngModel" required name="contact"  onKeyPress="if(this.value.length==10) return false;" id="contact" type="number"  class="form-control" ngModel>
+  <div *ngIf="name.touched && name.invalid" class="alert alert-danger" > Contact is required </div>
+
+</div>
+
+
+<br>
+<!-- <button class="btn btn-primary" type="submit">Add Accountant</button>	*/-->
+      <input class="submit" type="submit" value="Submit" (click)="add(teacher)">
+
+</form>
+</fieldset>
+
+<div class="alert alert-danger" role="alert" *ngIf="errorMsg">
+  Accountant Addedd Successfully !!
+</div>
+</div>
+</div>

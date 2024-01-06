@@ -1,0 +1,136 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" [routerLink]="['/accountant-home']" routerLinkActive="active">Accountant Panel</a>
+      <button class="navbar-toggler"
+       type="button"
+        data-bs-toggle="collapse"
+         data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse"
+      id="navbarNavDropdown">
+        <ul class="navbar-nav">
+
+
+          <li class="nav-item">
+            <a class="nav-link"
+            [routerLink]="['/add-student']" routerLinkActive="active">Add Student </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"
+            [routerLink]="['/view-student']" routerLinkActive="active">View Student</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link"
+            [routerLink]="['/search-student']" routerLinkActive="active">Search Student</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link"
+            [routerLink]="['/due-fees']" routerLinkActive="active">View Dues</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" style="padding-left: 600px;"
+            [routerLink]="['/login']" routerLinkActive="active">Logout</a>
+          </li>
+
+
+
+         </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="bg-image" style="
+  background-image: url('https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80');
+  height: 150vh; background-size : cover;">
+
+
+
+
+<div class="row">
+    <div class="col-md-6 offset-md-3 mt-4">
+		<fieldset class="k11">
+	<h1>Add Student Form</h1><br>
+
+	<form #student="ngForm">
+    <div class="form-group">
+	  <label for="name"> Name :</label>
+	  <input #name="ngModel" required  name="studentName"   id="name" type="text" class="form-control" ngModel>
+	<div *ngIf="name.touched && name.invalid" class="alert alert-danger" > Name is required </div>
+	</div>	<br>
+	<div class="form-group">
+	  <label for="email">e-mail :</label>
+	  <input #name="ngModel" required name="emailId" id="email" type="email" class="form-control" ngModel>
+	  <div *ngIf="name.touched && name.invalid" class="alert alert-danger" > e-mail id is required </div>
+
+	</div><br>
+	<div class="form-group">
+		<div class="form-check">
+			<label  for="gender">Gender:</label><br>
+
+
+			<input class="form-check-input" type="radio" name="gender" id="gender" value="Male" required ngModel/>
+			<label class="form-check-label" for="gender">Male</label><br>
+
+			<input class="form-check-input" type="radio" name="gender" id="gender" value="Female" required ngModel/>
+			<label class="form-check-label" for="gender">Female</label>
+
+
+		</div>
+
+	  </div><br>
+	<div class="form-group">
+		<label for="course">Course     :</label>
+		<select #name="ngModel" required name="course" id="course" class="form-control" ngModel required>
+			<option id="java" value="ISE">ISE</option>
+			<option id="python" value="CS">CS</option>
+			<option id="angular" value="Mechanical">Mechanical Engineering</option>
+			<option id="dotnet" value="Electrical">Electrical Engineering</option>
+		</select>
+		<div *ngIf="name.touched && name.invalid" class="alert alert-danger" > course is required </div>
+
+	  </div><br>
+	<div class="form-group">
+		<label for="sex">Fee        :</label>
+		<input #name="ngModel" required name="fee" [(ngModel)]="fee" (blur)="checkDueFee()" id="fee" type="number" class="form-control" ngModel>
+		<div *ngIf="name.touched && name.invalid" class="alert alert-danger" > Total fee is required </div>
+	  </div> <br>
+	  <div class="form-group">
+		<label for="paid">Paid       :</label>
+		<input #name="ngModel" required name="paid" [(ngModel)]="paid" (blur)="checkDueFee()" id="paid" type="number" class="form-control" ngModel>
+		<div *ngIf="name.touched && name.invalid" class="alert alert-danger" > Paid amount is required </div>
+	  </div>  <br>
+	<div class="form-group">
+		<label for="due">Due        :</label>
+		<input #name="ngModel" required name="duefees" [(ngModel)]="dueFee" readonly="readonly"  id="due" type="number" class="form-control" ngModel>
+		<div *ngIf="name.touched && name.invalid" class="alert alert-danger" > Due amount is required </div>
+	  </div> <br>
+	<div class="form-group">
+	  <label for="address">Address    :</label>
+	  <textarea #name="ngModel" required name="address" id="address" cols="10" rows="10" class="form-control" ngModel></textarea>
+	  <div *ngIf="name.touched && name.invalid" class="alert alert-danger" > Address is required </div>
+	</div><br>
+	<div class="form-group">
+		<label for="contact">Contact     :</label>
+		<input #name="ngModel" required onKeyPress="if(this.value.length==10) return false;" name="contactno" id="contact" type="number"  class="form-control" ngModel>
+		<div *ngIf="name.touched && name.invalid" class="alert alert-danger" > Contact is required </div>
+
+	</div><br>
+  <div class="form-group">
+		<label for="due">Password       :</label>
+		<input #name="ngModel" required name="password" id="password" type="password" class="form-control" ngModel>
+		<div *ngIf="name.touched && name.invalid" class="alert alert-danger" > Password is required </div>
+	  </div> <br>
+	<!--<button class="btn btn-primary" type="submit">Add Student</button>*/ -->
+	<input class="submit" type="submit" value="Submit" (click)="add(student)">
+</form>
+</fieldset>
+</div>
+</div>

@@ -1,0 +1,22 @@
+.button:hover {
+  background-color: red; /* Green */
+  color: white;
+}
+
+
+.button {
+  transition-duration: 0.4s;
+}
+
+
+
+h1 {
+
+	color: #343434;
+	font-weight: normal;
+	font-family: 'Ultra', sans-serif;
+	font-size: 36px;
+	line-height: 42px;
+	text-transform: uppercase;
+	text-shadow: 0 2px white, 0 3px #777;
+}
